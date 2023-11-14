@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+body {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #9900cc 0%, #ff99ff 100%);
+}
+
+.left-section{
+    display: grid;
+    justify-content: center;
+    border-right: black 1px solid;
+    height: 100vh;
+    width: 100%;
+    padding-top: 25px;
+}
+
+.right-section{
+    display: grid;
+    justify-content: center;
+    height: 100vh;
+    border-left: black 1px solid;
+    width: 100%;
+    padding-top: 25px;
+}
+.main-section {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin-top: 25px;
+    height: 100%;
+} 
+.main-section-images{
+    display: flex;
+    gap: 50px;
+    padding-left: 50px;
+}
+.main-section-images img{
+    display: flex;
+    justify-content: center;   
+    width: 25%;
+    height: 50%;
+}
+.main-section-images img:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.main-section-title {
+    font-size: 50px;
+    height: 100px
+
+}
+.main-title-screen-title{
+    display: flex;
+    font-size: 50px;
+    margin-bottom: 25px;
+    height: 50px;
+}
+.main-section-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+.main-section-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    color: black;
+    background-color: transparent;
+    border: pink 1px dashed;
+}
+.hidden {
+    display: none;
+}
