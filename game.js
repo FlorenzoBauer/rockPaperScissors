@@ -53,3 +53,15 @@ class game {
     }
 }
 
+var images = document.querySelector('.main-section-images');
+
+images.addEventListener('click', (e) =>  {
+    playerChoice(e);
+});
+
+function playerChoice(e) {
+    let player1 = new game('player1');
+    player1.choice = e.target.alt;
+    player1.gameLoop();
+
+}

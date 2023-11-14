@@ -14,8 +14,10 @@ body {
 }
 
 .left-section{
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
     border-right: black 1px solid;
     height: 100vh;
     width: 100%;
@@ -23,10 +25,12 @@ body {
 }
 
 .right-section{
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    border-right: black 1px solid;
     height: 100vh;
-    border-left: black 1px solid;
     width: 100%;
     padding-top: 25px;
 }
@@ -56,7 +60,7 @@ body {
 .main-section-title {
     font-size: 50px;
     height: 100px
-
+    
 }
 .main-title-screen-title{
     display: flex;
@@ -80,6 +84,56 @@ body {
     background-color: transparent;
     border: pink 1px dashed;
 }
+
+.main-section-button:hover{
+    background-color: pink;
+    color: black;
+    transition: 0.5s;
+}
+
+
+.left-section-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    color: black;
+    background-color: transparent;
+    border: pink 1px dashed;
+}
+.left-section-button:hover{
+    background-color: pink;
+    color: black;
+    transition: 0.5s;
+}
+
+.right-section-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    color: black;
+    background-color: transparent;
+    border: pink 1px dashed;
+}
+.right-section-button:hover{
+    background-color: pink;
+    color: black;
+    transition: 0.5s;
+}
+
+
 .hidden {
     display: none;
+}
+
+p1 {
+    font-size: 80px;
+    height: 80px;
+}
+
+p2 {
+    font-size: 30px;
 }

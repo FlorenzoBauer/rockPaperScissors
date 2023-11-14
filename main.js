@@ -1,27 +1,34 @@
-var images = document.querySelectorAll('.main-section-images img');
-var startButtons = document.querySelectorAll('.main-section-buttons');
+var startButtons = document.querySelector('.main-section-buttons');
+var changeModeButton = document.querySelector('.left-section-button')
+var restartGameButton = document.querySelector('.right-section-button');
+
+restartGameButton.addEventListener('click', restartGame)
+changeModeButton.addEventListener('click', viewChange);
 
 startButtons.addEventListener('click', (e) =>  {
     startGame(e);
 });
 
-images.addEventListener('click', (e) =>  {
-    playerChoice(e);
-});
+function restartGame(){
+    window.gameLoop();
+}
 
-function playerChoice(e) {
-   var player1 = {
-       choice: e.target.alt
-   };
-   let myGame = new game('player1');
-   myGame.gameLoop();
-   return player1;
+function viewChange(){
+    var titleImgs = document.querySelector('.main-section-images');
+    titleImgs.classList.add('hidden');
+    document.querySelector('.main-section-buttons').style.display = 'flex';
 }
 
 function startGame(e){
+    var titleImgs = document.querySelector('.main-section-images');
+    var header = document.querySelector('.main-section-title-screen');
     if (e.target.id == 'button-classic') {
         console.log("hi")
         document.querySelector('.main-section-buttons').style.display = 'none';
-        document.querySelector('.main-section-images hidden').removeAttribute('hidden');
+        titleImgs.classList.remove('hidden');
+        header.innerHTML("Classic");
+    }
+    if (e.target.id == 'button-lotr'){
+
     }
 }
