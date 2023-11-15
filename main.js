@@ -6,7 +6,9 @@ var lotrimages = document.querySelector('.main-section-imgLotr');
 var myGame;
 // event listeners
 
-changeModeButton.addEventListener('click', viewChange);
+changeModeButton.addEventListener('click', (e) => {
+    viewChange();
+});
 startButtons.addEventListener('click', (e) =>  {
     startGame(e);
 });
@@ -21,13 +23,16 @@ lotrimages.addEventListener('click', (e) =>  {
 
 //functions 
 
-function viewChange(myGame){
+function viewChange(){
     document.querySelector('.main-section-images').classList.add('hidden');
     document.querySelector('.main-section-imgLotr').classList.add('hidden');
     document.querySelector('.left-section-button').classList.add('hidden');
     
+    
     document.querySelector('.main-section-buttons').style.display = 'flex';
     document.querySelector('.main-section-title-screen').innerHTML = "Game Mode";
+    myGame = null;
+    return myGame;
 }
 function updateWins(myGame){
     document.querySelector('.left-section-wins').innerHTML = `Wins: ${myGame.player1.wins}`;
