@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 50px;
-    border-right: black 1px solid;
+    border-left: black 1px solid;
     height: 100vh;
     width: 100%;
     padding-top: 25px;
@@ -66,7 +66,7 @@ body {
     display: flex;
     justify-content: center;   
     width: 25%;
-    height: 50%;
+    height: 40%;
 }
 .main-section-imgLotr img:hover{
     transform: scale(1.2);
@@ -89,13 +89,14 @@ body {
     justify-content: center;
     gap: 25px;
     width: 100%;
+    height: 50px;
 }
 .main-section-button{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100px;
-    height: 50px;
+    height: 80px;
     color: black;
     background-color: transparent;
     border: pink 1px dashed;
