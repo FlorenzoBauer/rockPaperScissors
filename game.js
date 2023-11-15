@@ -1,12 +1,13 @@
 
-class game {
-    constructor(player1) {
+class Game {
+    constructor(player1, choices) {
         this.player1 = new player(player1);
         this.computer = new player('Computer');
-        this.choices = ['rock', 'paper', 'scissors'] || ['hobbit', 'elf', 'ork'];
-       
+        this.choices =  choices || ['hobbit', 'elf', 'ork', 'wizard', 'human'];
+        this.turn = "player1";
     }
-
+ //['rock', 'paper', 'scissors']
+ 
     computerChoice() {
         let index = Math.floor(Math.random() * this.choices.length);
         this.computer.choice = this.choices[index];
@@ -16,6 +17,13 @@ class game {
         if (this.player1.choice === this.computer.choice) {
             return `It's a tie!`;
         }
+        if( (this.player1.choice === 'wizard' && this.computer.choice === 'ork') || (this.player1.choice === 'human') || 
+        (this.player1.choice === 'ork') || (this.player1.choice === 'elf')||
+         (this.player1.choice === 'hobbit') ){
+            this.player1.wins++
+            return `${this.player1.name} wins!`;
+         }
+
         if (
             (this.player1.choice === 'rock' && this.computer.choice === 'scissors') ||
             (this.player1.choice === 'scissors' && this.computer.choice === 'paper') ||
@@ -27,41 +35,32 @@ class game {
             return 'Computer wins!';
         }
     }
-
     
-   
+    makeChoice() {
+        if (this.player1.choice === '') {
+            return;
+        }
+        if (this.turn === "player1") {
+            this.player1.choice = e.target.alt;
+            this.turn = "computer";
+        }
+        
+        if (this.turn === "computer") {
+            this.computerChoice();
+            this.turn = "player1";
+        }
+    }
     gameLoop() {
-        if (this.player1.wins >= 3) {
-            console.log(`${this.player1.name} has won the game!`);
-            return;
-        }
-        if (this.computer.wins >= 3) {
-            console.log("Computer has won the game!");
-            return;
-        }
-       
-            this.player1.choice = playerChoice();
+            this.makeChoice();
             this.computerChoice();
             let result = this.findWinner();
-            console.log(`Player chose ${this.player1.choice}`);
-            console.log(`Computer chose ${this.computer.choice}`);
+            
             console.log(result);
-            console.log(`Player wins: ${this.player1.wins}`);
-            console.log(`Computer wins: ${this.computer.wins}`);
-            this.gameLoop(); 
+            
+           
+           
         
     }
 }
 
-var images = document.querySelector('.main-section-images');
 
-images.addEventListener('click', (e) =>  {
-    playerChoice(e);
-});
-
-function playerChoice(e) {
-    let player1 = new game('player1');
-    player1.choice = e.target.alt;
-    player1.gameLoop();
-
-}

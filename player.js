@@ -3,6 +3,6 @@ class player {
         this.name = name;
         this.wins = 0;
         this.choice = '';
-
+        
     }
 }

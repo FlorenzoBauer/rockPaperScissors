@@ -57,6 +57,22 @@ body {
     transition: 0.5s;
 }
 
+.main-section-imgLotr{
+    display: flex;
+    gap: 50px;
+    padding-left: 50px;
+}
+.main-section-imgLotr img{
+    display: flex;
+    justify-content: center;   
+    width: 25%;
+    height: 50%;
+}
+.main-section-imgLotr img:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
 .main-section-title {
     font-size: 50px;
     height: 100px
