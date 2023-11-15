@@ -17,9 +17,12 @@ class Game {
         if (this.player1.choice === this.computer.choice) {
             return `It's a tie!`;
         }
-        if( (this.player1.choice === 'wizard' && this.computer.choice === 'ork') || (this.player1.choice === 'human') || 
-        (this.player1.choice === 'ork') || (this.player1.choice === 'elf')||
-         (this.player1.choice === 'hobbit') ){
+        if( 
+            (this.player1.choice === 'hobbit' && this.computer.choice === 'human' || 'wizard')){
+            (this.player1.choice === 'elf' && this.computer.choice === 'ork' || 'hobbit')||
+            (this.player1.choice === 'human' && this.computer.choice === 'elf' || 'wizard') || 
+            (this.player1.choice === 'wizard' && this.computer.choice === 'ork' || 'elf') ||
+            (this.player1.choice === 'ork' && this.computer.choce === 'human' || 'hobbit') ||
             this.player1.wins++
             return `${this.player1.name} wins!`;
          }
@@ -40,21 +43,22 @@ class Game {
         if (this.player1.choice === '') {
             return;
         }
-        if (this.turn === "player1") {
-            this.player1.choice = e.target.alt;
-            this.turn = "computer";
-        }
-        
-        if (this.turn === "computer") {
+        else{
+            
             this.computerChoice();
             this.turn = "player1";
+        }
+        
+        
+        if (this.turn === "computer") {
         }
     }
     gameLoop() {
             this.makeChoice();
-            this.computerChoice();
+            console.log(this.player1.choice)
+            console.log(this.computer.choice)
             let result = this.findWinner();
-            
+            this.player1.choice = '';
             console.log(result);
             
            
