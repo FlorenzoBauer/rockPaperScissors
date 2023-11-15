@@ -5,6 +5,7 @@ class Game {
         this.computer = new Player('Computer');
         this.choices =  choices || ['hobbit', 'elf', 'ork', 'wizard', 'human'];
         this.turn = "player1";
+        this.message = '';
     }
  //['rock', 'paper', 'scissors']
  
@@ -15,7 +16,8 @@ class Game {
 
     findWinner() {
             if (this.player1.choice === this.computer.choice) {
-                return `It's a tie!`;
+                this.message = `It's a tie!`;
+                return this.message;
             }
             if( 
                 (this.player1.choice === 'hobbit' && (this.computer.choice === 'human' || this.computer.choice === 'wizard')) ||
@@ -24,7 +26,8 @@ class Game {
                 (this.player1.choice === 'wizard' && (this.computer.choice === 'ork' || this.computer.choice === 'elf')) ||
                 (this.player1.choice === 'ork' && (this.computer.choice === 'human' || this.computer.choice === 'hobbit'))) {
                 this.player1.incrementWins();
-                return `${this.player1.name} wins!`;
+                this.message = `${this.player1.name} wins!`;
+                return this.message;
             }
 
         if (
@@ -32,11 +35,13 @@ class Game {
             (this.player1.choice === 'scissors' && this.computer.choice === 'paper') ||
             (this.player1.choice === 'paper' && this.computer.choice === 'rock')
         ) { this.player1.wins++
-            return `${this.player1.name} wins!`;
+            this.message = `${this.player1.name} wins!`;
+            return this.message;
         } 
         else {
             this.computer.incrementWins();
-            return 'Computer wins!';
+            this.message = `Computer wins!`;
+            return this.message;
         }
     }
 
@@ -58,8 +63,8 @@ class Game {
             this.makeChoice();
             let result = this.findWinner();
             this.player1.choice = '';
-            // alert(result);
-            
+            console.log('gameLoop')
+                return result;
     }
 }
 
