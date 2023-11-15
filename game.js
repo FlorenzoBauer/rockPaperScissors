@@ -15,7 +15,7 @@ class Game {
 
     findWinner() {
             if (this.player1.choice === this.computer.choice) {
-                return `It's a tie!`;
+                return alert(`It's a tie!`);
             }
             if( 
                 (this.player1.choice === 'hobbit' && (this.computer.choice === 'human' || this.computer.choice === 'wizard')) ||
